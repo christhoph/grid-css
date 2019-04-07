@@ -1,0 +1,38 @@
+/*
+    GRID dinámico con auto-fill y auto-fit
+*/
+
+main{
+    height: 90vh;
+    padding: 1vmin;
+}
+
+section{
+    display: grid;
+    grid-gap: 1vmin;
+    margin: 20px 0;
+}
+
+section > *{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    font-size: calc(10px + 1vmin);
+}
+
+.auto-fill div{
+    background: var(--c_sky);
+}
+
+.auto-fit div{
+    background: var(--c_green);
+}
+
+.auto-fill{
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+}
+
+.auto-fit{
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}

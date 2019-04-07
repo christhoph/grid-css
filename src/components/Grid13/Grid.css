@@ -1,0 +1,38 @@
+/*
+    GRID dentro de otro GRID
+*/
+
+#grid-1{
+    height: 90vh;
+    display: grid;
+    grid-gap: 1vmin;
+    grid-template-columns: repeat(auto-fit, minmax(100px, auto));
+}
+
+#grid-1 > *{
+    background: var(--c_sky);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: calc(10px + 1vmin);
+}
+
+#grid-1 > div:nth-child(5){
+    background: var(--c_green);
+    display: block;
+}
+
+#grid-2{
+    height: 100%;
+    display: grid;
+    grid-gap: 1.5vmin;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+#grid-2 > div{
+    background: var(--c_red);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: calc(10px + 1vmin);
+}

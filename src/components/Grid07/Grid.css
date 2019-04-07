@@ -1,0 +1,30 @@
+/*
+    Establecer límites con minmax()
+*/
+
+main{
+    height: 90vh;
+    display: grid;
+    grid-gap: 1vmin;
+    grid-template-columns: repeat(8, 1fr);
+
+    /* 8 columnas con un mínimo y un máximo (límite) - minmax() */
+    /* grid-template-columns: repeat(8, minmax(100px, 1fr)); */
+
+    /* 8 columnas con un patrón dos (30px y mínimo 10% y máximo flexible 1fr) */
+    /* grid-template-columns: repeat(4, 30px minmax(10%, 1fr)); */
+
+    /* 8 columnas con un mínimo marcado por el contenido y un máximo del 30% */
+    /* grid-template-columns: repeat(8, minmax(min-content, 30%)); */
+
+    /* 8 columnas con un máximo y mínimo marcado por su contenido */
+    /* grid-template-columns: repeat(8, minmax(min-content, max-content)); */
+}
+
+main > *{
+    background: var(--c_sky);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: calc(10px + 1vmin);
+}

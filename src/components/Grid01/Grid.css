@@ -1,0 +1,44 @@
+/*
+    Terminología y primeros pasos
+*/
+
+
+main{
+    height: 90vh;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 100px 100px 100px 100px;
+    grid-template-rows: 100px 100px 100px;
+}
+
+main > div{
+    background: var(--c_sky);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width: 600px){
+
+    main > div:nth-child(10){
+        background: #003780;
+        /* El número son el número de Grid Lines que se tenga
+        grid-column-start: 3;
+        grid-column-end: 5; 
+        */
+        /* -1 significa hasta la última fila
+        grid-column: 3 / -1; 
+        */
+        grid-column: 3 / 5;
+    }
+    
+    main > div:nth-child(6){
+        background: #106B60;
+        grid-column: 2 / 3;
+        /* 
+        grid-row: 2 / -1; 
+        */
+        grid-row: 2 / 4;
+    }
+
+}

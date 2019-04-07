@@ -1,0 +1,46 @@
+/*
+    Demo Grid CSS
+*/
+
+main > *{
+    background: var(--c_sky);
+    font-size: calc(40px + 2vmin);
+}
+
+/* Definimos el grid container */
+
+main{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-areas: 
+        'header' 
+        'izquierda' 
+        'contenido' 
+        'derecha' 
+        'footer';
+}
+
+/* Nombramos los elementos */
+
+header{grid-area: header}
+
+aside:first-of-type{grid-area: izquierda}
+
+article{grid-area: contenido}
+
+aside:last-of-type{grid-area: derecha}
+
+footer{grid-area: footer}
+
+/* Desktop */
+
+@media (min-width: 576px){
+
+    main{
+        grid-template-areas: 
+            'header     header      header'
+            'izquierda  contenido   derecha'
+            'footer     footer      .';
+    }
+
+}

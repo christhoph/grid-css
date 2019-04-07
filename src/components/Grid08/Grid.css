@@ -1,0 +1,31 @@
+/*
+    Repetir valores y patrones con repeat()
+*/
+
+main{
+    height: 90vh;
+    display: grid;
+    grid-gap: 1vmin;
+    grid-template-columns: 
+        [start]
+        repeat(4, 
+            [col-lg-start] minmax(80px, 1fr)
+            [col-lg-end col-md-start] minmax(40px, 1fr)
+            [col-md-end col-sm-start] minmax(20px, 1fr)
+        )
+        [end];
+}
+
+main > *{
+    background: var(--c_sky);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: calc(10px + 1vmin);
+}
+
+main > div:first-of-type{
+    background: purple;
+    color: white;
+    grid-column: col-lg-start / end;
+}

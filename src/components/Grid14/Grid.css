@@ -1,0 +1,53 @@
+/*
+    Propiedad grid-template
+*/
+
+main{
+    height: 90vh;
+    display: grid;
+    grid-gap: 1vmin;
+    /* grid-template-areas: 
+        'header header      header'
+        'aside1 contenido   aside2'
+        'aside1 contenido   aside3'
+        'aside1 footer      footer';
+    grid-template-rows: 
+        [inicio] 1fr 
+        [contenido-start] 2fr 1fr 1fr
+        [fin];
+    grid-template-columns: 
+        [inicio] 1fr
+        [contenido-start] 2fr 1fr
+        [fin]; */
+    grid-template: 
+        /* rows */
+        [inicio]                'header header header'      1fr
+        [contenido-start]       'aside1 contenido aside2'   2fr
+                                'aside1 contenido aside3'   1fr
+        'aside1 footer footer'  1fr                         [fin]
+        /
+        /* columns */
+        [inicio]                1fr
+        [contenido-start]       2fr 1fr
+        [fin];
+}
+
+main > *{
+    background: var(--c_sky);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: calc(10px + 1vmin);
+}
+
+header{grid-area: header}
+
+aside:first-of-type{grid-area: aside1}
+
+article{grid-area: contenido}
+
+aside:nth-of-type(2){grid-area: aside2}
+
+aside:last-of-type{grid-area: aside3}
+
+footer{grid-area: footer}

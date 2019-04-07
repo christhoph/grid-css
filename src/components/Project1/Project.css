@@ -1,0 +1,127 @@
+.container{
+    min-height: 100vh;
+    display: grid;
+    grid:   'title'
+            'aside1'
+            'box'
+            'aside2'
+            'footer';
+    font-size: calc(10px + 1vmin);
+}
+
+header{
+    background: var(--c_black);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: title;
+    color: #fff;
+}
+
+aside:first-of-type{
+    background: var(--c_sky);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: aside1;
+    border-bottom: 1px solid var(--c_black);
+    padding: 0 3.5vmin;
+    color: #fff;
+}
+
+.box{
+    background: #fff;
+    display: grid;
+    grid-area: box;
+    grid:   'box-head'
+            'box-text1'
+            'box-text2';
+}
+
+.box-head{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    grid-area: box-head;
+    margin: 2vmin 0;
+    padding: 1vmin;
+}
+
+.box img{
+    height: 20vmin;
+    width: 20vmin;
+}
+
+.box-head p{
+    padding: 1vmin 2.5vmin;
+}
+
+.box-text1{
+    background: var(--c_green);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: box-text1;
+    padding: 2.5vmin;
+}
+
+.box-text2{
+    background: var(--c_red);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: box-text2;
+    padding: 2.5vmin;
+}
+
+aside:last-of-type{
+    background: var(--c_sky);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: aside2;
+    padding: 0 3.5vmin;
+    color: #fff;
+}
+
+footer{
+    background: var(--c_black);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: footer;
+    color: #fff;
+}
+
+@media (min-width: 576px) and (max-width:991.99px){
+
+    .container{
+        grid:   'title  title   title'
+                'aside1 box     box'
+                'aside2 box     box'
+                'footer footer  footer';
+    }
+
+    .box{
+        grid:   'box-head   box-head'
+                'box-text1  box-text2';
+    }
+
+}
+
+@media screen and (min-width: 992px){
+
+    .container{
+        grid:   'title  title   title   title'
+                'aside1 box     box     aside2'
+                'aside1 box     box     aside2'
+                'footer footer  footer  footer';
+    }
+
+    .box{
+        grid:   'box-head   box-head'
+                'box-text1  box-text2';
+    }
+
+}

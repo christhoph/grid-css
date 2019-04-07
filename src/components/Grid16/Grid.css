@@ -1,0 +1,24 @@
+/*
+    Alineamiento de GRID Items
+*/
+
+main{
+    height: 90vh;
+    display: grid;
+    grid-gap: 1vmin;
+    grid: repeat(4, 50px) / repeat(3, 1fr);
+    /* Sentido row - Eje X
+        justify-items: start / end / center / stretch */
+    justify-items: stretch;
+    /* Sentido column - Eje Y
+        align-items: start / end / center / stretch */
+    align-items: stretch;
+}
+
+main > *{
+    background: var(--c_sky);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: calc(10px + 1vmin);
+}

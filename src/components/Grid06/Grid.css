@@ -1,0 +1,49 @@
+/*
+    Grid Template Areas
+*/
+
+main{
+    height: 90vh;
+    display: grid;
+    grid-gap: 1vmin;
+    grid-template-areas: 
+        'header'
+        'contenido'
+        'izquierda'
+        'derecha'
+        'footer';
+    padding: 1vmin;
+}
+
+main > *{
+    background: var(--c_sky);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: calc(40px + 2vmin);
+}
+
+/* Nombrar las áreas */
+
+header{grid-area: header;}
+
+aside:first-of-type{grid-area: izquierda;}
+
+article{grid-area: contenido;}
+
+aside:last-of-type{grid-area: derecha;}
+
+footer{grid-area: footer;}
+
+@media screen and (min-width: 576px){
+
+    main{
+        grid-template-areas: 
+            'header     header      header'
+            'izquierda  contenido   derecha'
+            'footer     footer      footer';
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-rows: 2fr 5fr 1fr;
+    }
+
+}

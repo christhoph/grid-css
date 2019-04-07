@@ -1,0 +1,22 @@
+/*
+    Separación entre los elementos GRID
+*/
+
+main{
+    height: 90vh;
+    display: grid;
+    /* grid-row-gap: 2vmin;
+    grid-column-gap: 3vmin; */
+    grid-gap: 2vmin 3vmin;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    /* Implicit grid */
+    grid-auto-rows: 1fr;
+}
+
+main > div{
+    background: var(--c_sky);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

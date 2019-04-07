@@ -1,0 +1,26 @@
+/*
+    Alineamiento de GRID Items individual
+*/
+
+main{
+    height: 90vh;
+    display: grid;
+    grid-gap: 1vmin;
+    grid: repeat(4, 50px) / repeat(3, 1fr);
+}
+
+main > *{
+    background: var(--c_sky);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: calc(10px + 1vmin);
+}
+
+main > div:nth-child(5){
+    background: var(--c_green);
+    /* Row - justify-self: start / end / center / stretch */
+    justify-self: stretch;
+    /* Column - align-self: start / end / center / stretch */
+    align-self: stretch;
+}

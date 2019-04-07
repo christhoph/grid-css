@@ -1,0 +1,48 @@
+/*
+    Nombrando Grid Lines
+    [nameLine-start]    #fr;
+*/
+
+main{
+    height: 90vh;
+    display: grid;
+    grid-gap: 1vmin;
+    grid-template-columns: 
+        [sidebar-start]     1fr
+        [contenido-start]   2fr;
+    grid-template-rows: 
+        [header-start]      1fr
+        [contenido-start]   2fr
+        [footer-start]      1fr;
+}
+
+main > *{
+    background: var(--c_sky);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header{
+    grid-column: sidebar-start / span 2;
+}
+
+footer{
+    grid-column: sidebar-start / -1;
+}
+
+@media screen and (max-width: 650px){
+
+    header{
+        grid-column: sidebar-start / span 2;
+    }
+    
+    aside{
+        grid-row: contenido-start / span 2;
+    }
+    
+    footer{
+        grid-column: contenido-start;
+    }
+    
+}

@@ -1,0 +1,20 @@
+/*
+    Implicit & explicit GRID
+*/
+
+main{
+    height: 90vh;
+    display: grid;
+    grid-gap: 1vmin;
+    grid-template-columns: 200px 100px;
+    grid-auto-columns: 300px;
+    grid-auto-flow: column;
+}
+
+main > *{
+    background: var(--c_sky);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: calc(10px + 1vmin);
+}
